@@ -1,166 +1,71 @@
-# Academic Portfolio & GitHub Pages
+# Portfolio & GitHub Pages — Diego Perdigão Sousa, D.Sc.
 
-Este repositório contém a estrutura e os arquivos estáticos do site acadêmico replicado a partir de [charlescasimiro.github.io](https://charlescasimiro.github.io/), preparado para ser adaptado e publicado como o site pessoal do pesquisador **Diego Perdigão Sousa** em [diegoperdigao.github.io](https://diegoperdigao.github.io/).
-
----
-
-## 1. Engenharia Reversa e Arquitetura do Site Original
-
-### 1.1 Stack Tecnológico
-* **Estrutura:** HTML5 estático sem dependência de geradores estáticos complexos (não requer Jekyll, Hugo, Ruby ou Node.js para compilar).
-* **Estilização:** CSS3 puro (`css/style.css`), baseado originalmente no tema clássico acadêmico `CSS3_four` (de `css3templates.co.uk`), com container centralizado de ~950px e tipografia em `Yanone Kaffeesatz` (`fonts/`).
-* **Interatividade / Scripts:**
-  * `js/jquery.js` + `js/jquery.sooperfish.js`: Gerenciador do menu dropdown multinível na barra de navegação superior.
-  * `js/jquery.easing-sooper.js`: Animações suaves de abertura dos submenus.
-  * `js/modernizr-1.5.min.js`: Suporte e detecção de recursos HTML5.
-  * `js/image_fade.js`: Efeito de transição de imagens de cabeçalho (quando ativo).
-* **Hospedagem nativa:** Compatível diretamente com o GitHub Pages servindo a raiz (`/`) do branch `main` ou `master`.
+Site pessoal e portfólio profissional e acadêmico do pesquisador **Diego Perdigão Sousa**, hospedado no GitHub Pages em:
+👉 **[https://diegoperdigao.github.io/](https://diegoperdigao.github.io/)**
 
 ---
 
-### 1.2 Mapa de Arquivos e Estrutura de Pastas
+## 1. Perfil Profissional e Acadêmico
 
-```text
-├── index.html                   # Página inicial: Foto, Biografia, Formação (D.Sc., M.Sc.), Contato e Afiliações
-├── publications.html            # Lista de publicações (Livros, Capítulos, Artigos de Periódicos, Conferências, Patentes)
-├── research.html                # Linhas e projetos de pesquisa, financiamentos, parceiros e colaboradores
-├── students_theses.html         # Orientações e teses/dissertações supervisionadas (ou referências acadêmicas)
-├── service.html                 # Atividades profissionais: revisões para periódicos, sociedades científicas, eventos
-├── misc.html                    # Notícias, prêmios, palestras e atividades diversas
-├── telecommunications_book.html # Página de destaque para livro/publicação específica (opcional)
-│
-├── [Disciplinas / Ensino]       # Subpáginas do menu Teaching (graduação e pós-graduação)
-│   ├── adaptive_filtering.html
-│   ├── estimation_detection.html
-│   ├── information_theory.html
-│   ├── bss.html
-│   ├── statistics_eng.html
-│   ├── stochastic_processes.html
-│   └── statistical_sp.html
-│
-├── [Recursos / Assets]
-│   ├── css/
-│   │   └── style.css            # Folha de estilo principal
-│   ├── fonts/                   # Fontes web incorporadas (Yanone Kaffeesatz)
-│   ├── js/                      # Bibliotecas jQuery e plugins de menu
-│   ├── images/                  # Fotos de perfil, logos (UFC, ResearchGate, Scholar, etc.) e ícones
-│   └── pdf/                     # PDFs de teses, currículo, slides e notas de aula
-```
-
----
-
-## 2. Guia de Adaptação para Diego Perdigão Sousa
-
-### 2.1 Dados Pessoais e Links Identificados
-* **Nome:** Diego Perdigão Sousa
-* **Titulação:** Doutor em Engenharia de Teleinformática (D.Sc.)
-* **Afiliação:** Universidade Federal do Ceará (UFC), Centro de Tecnologia, PPGETI
+* **Vínculo Atual:** Pesquisador Líder (Lead Researcher) no **Instituto Gridtech de Pesquisa e Desenvolvimento** (ICT do Grupo Hexing Brasil).
+* **Atuação:** Liderança do roadmap tecnológico institucional, governança técnica e gestão de portfólios de P&D Regulado (P&D ANEEL e Lei de TICs / MCTI), inteligência artificial para utilities, Smart Grids, Smart Metering e edge computing.
+* **Formação Acadêmica:**
+  * **Pós-Doutorado (2024–2025):** Engenharia de Teleinformática (SPIRAL / DETI / UFC), com foco em aprendizado federado e sistemas preditivos distribuídos (parceria KTH e Uppsala University).
+  * **Doutorado (D.Sc., 2019–2024):** Engenharia de Teleinformática (UFC) com período sanduíche no KTH Royal Institute of Technology (Suécia).
+  * **Mestrado (M.Sc., 2017–2019):** Engenharia de Teleinformática (UFC / GTEL).
+  * **Graduação (B.Sc., 2011–2017):** Engenharia de Computação (UFC).
 * **Links Principais:**
-  * **Currículo Lattes:** [http://lattes.cnpq.br/3866699869645553](http://lattes.cnpq.br/3866699869645553)
   * **LinkedIn:** [https://www.linkedin.com/in/diegoperdigaosousa/](https://www.linkedin.com/in/diegoperdigaosousa/)
+  * **Lattes:** [http://lattes.cnpq.br/3866699869645553](http://lattes.cnpq.br/3866699869645553)
   * **GitHub:** [https://github.com/diegoperdigao](https://github.com/diegoperdigao)
 
-### 2.2 Principais Alterações por Arquivo
+---
 
-#### A. Cabeçalho Geral (Todas as páginas `.html`)
-Substitua no bloco `<div id="logo_text">`:
-```html
-<h1><a href="index.html">Diego Perdigão Sousa</a></h1>
-<h2>Researcher & Engineer | Ph.D. in Teleinformatics</h2>
-```
+## 2. Portfólio de Projetos Regulados (Instituto Gridtech)
 
-#### B. Barra Lateral e Badges de Perfil (`#sidebar_container`)
-Em `index.html` e demais páginas, adicione o link do LinkedIn e atualize os identificadores:
-```html
-<div class="sidebar">
-  <h3>Profiles</h3>
-  <!-- Lattes CNPq -->
-  <a href="http://lattes.cnpq.br/3866699869645553" target="_blank" title="Currículo Lattes">
-    <b>Currículo Lattes</b>
-  </a>
-  <br/><br/>
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/diegoperdigaosousa/" target="_blank" title="LinkedIn">
-    <b>LinkedIn Profile</b>
-  </a>
-  <br/><br/>
-  <!-- GitHub -->
-  <a href="https://github.com/diegoperdigao" target="_blank" title="GitHub">
-    <b>GitHub Profile</b>
-  </a>
-</div>
-```
+### A. Projeto REPOTEX — Regulado pelo P&D ANEEL
+* **Marco Regulatório:** Programa de Pesquisa e Desenvolvimento Tecnológico do Setor de Energia Elétrica regulado pela ANEEL.
+* **Escopo:** Soluções avançadas para aumento de confiabilidade, monitoramento de ativos e transição energética de concessionárias de energia.
 
-#### C. Página Inicial (`index.html`)
-1. **Foto de Perfil:**
-   - Adicione sua foto na pasta `images/` (por exemplo `images/diego_perdigao.jpg`) e altere na linha da imagem:
-     ```html
-     <span class="left"><img src="images/diego_perdigao.jpg" alt="Diego Perdigão Sousa" height="300" width="237" /></span>
-     ```
-2. **Formação Acadêmica (`#Education`):**
-   - **Doutorado (2024):** D.Sc. em Engenharia de Teleinformática, Universidade Federal do Ceará (UFC).
-     * Título da Tese: *Leakage detection in a real water distribution network through a federated prototype-based model* (Orientador: Prof. Charles Casimiro Cavalcante, Coorientador: Prof. Carlo Fischione - KTH).
-     * Link institucional da tese: [Repositório UFC](https://repositorio.ufc.br/bitstream/riufc/80329/1/2024_dpsousa.pdf).
-   - **Mestrado (2019):** M.Sc. em Engenharia de Teleinformática, Universidade Federal do Ceará (UFC).
-     * Título da Dissertação: *Detecção de falhas de curto-circuito em motores de indução trifásicos usando classificadores baseados em protótipos*.
-     * Link institucional da dissertação: [Repositório UFC](http://repositorio.ufc.br/bitstream/riufc/49906/5/2019_dis_dpsousa.pdf).
-   - **Graduação:** Bacharelado em Engenharia de Teleinformática, Universidade Federal do Ceará (UFC).
-3. **Áreas de Pesquisa:**
-   - Aprendizado Federado (*Federated Learning*)
-   - Classificadores Baseados em Protótipos (LVQ - Learning Vector Quantization)
-   - Redes de Distribuição de Água e Detecção de Vazamentos
-   - Detecção de Falhas e Manutenção Preditiva (Motores de Indução)
-   - Aprendizado de Máquina Aplicado a IoT e Cidades Inteligentes
-
-#### D. Publicações (`publications.html`)
-Você já possui publicações presentes no acervo original prontas para serem destacadas:
-* **Capítulo de Livro (Wiley 2025):**
-  * Diego P. Sousa, José M. B. da Silva Jr, Charles C. Cavalcante, and Carlo Fischione. *"A Federated Prototype-Based Model for IoT Systems: A Study Case for Leakage Detection in a Real Water Distribution Network"*. In: *Wireless Sensor Networks in Smart Environments*, Chapter 12, pp. 273-298, 2025.
-* **Capítulo de Livro (Springer 2019):**
-  * Diego P. Sousa, Guilherme A. Barreto, Charles C. Cavalcante, and Cláudio M. S. Medeiros. *"LVQ-type Classifiers for Condition Monitoring of Induction Motors: A Performance Comparison"*. Springer, 2019.
-* **Artigo em Periódico (Water Supply 2023):**
-  * Diego Sousa, Rong Du, José Mairton Barros da Silva Jr, Charles Casimiro Cavalcante, and Carlo Fischione. *"Leakage detection in water distribution networks using machine-learning strategies"*, *Water Supply*, 2023. DOI: 10.2166/ws.2023.054.
-* **Conferências (CBIC, IEEE VTC, Blue Planet, etc.):**
-  * Artigos no Congresso Brasileiro de Inteligência Computacional (CBIC 2019, CBIC 2025) e workshops internacionais.
+### B. Portfólio de P&D Incentivado pela Lei de TICs e Regulado pelo MCTI
+* **Marco Regulatório:** Lei de Informática / Lei de TICs (Lei nº 8.248/1991), regulada pelo MCTI/CATI.
+* **Credenciamento:** Liderança institucional no credenciamento e renovações do Instituto Gridtech junto ao CATI/MCTI como ICT apta à captação de recursos de inovação.
+* **Escopo:** Medição inteligente (Smart Metering), redes elétricas inteligentes (Smart Grids), inteligência artificial na borda (Edge AI) e telemetria avançada (AMI).
 
 ---
 
-## 3. Testando Localmente
+## 3. Estrutura do Site
 
-Para visualizar e editar as páginas em sua máquina local sem precisar instalar servidores pesados:
+```text
+├── index.html                   # Página inicial: Foto de perfil, Mini-Bio, Projetos Regulados, Formação e Contato
+├── research.html                # Detalhamento dos Projetos Regulados (Gridtech/ANEEL/MCTI), Projetos Acadêmicos e Linhas de Pesquisa
+├── publications.html            # Publicações científicas (Capítulos Wiley e Springer, Water Supply, CBIC, VTC, Teses)
+├── students_theses.html         # Teses e Titulações: Doutorado (2024), Mestrado (2019), Graduação (2017) e Orientações
+├── service.html                 # Experiência profissional, Governança, Certificações (ISO, WIPO, NVIDIA) e Sociedades
+├── misc.html                    # Marcos recentes, notícias, código open source e links para o GitHub
+├── favicon.ico                  # Favicon oficial gerado a partir da foto de perfil
+├── css/
+│   └── style.css                # Estilização completa e responsiva para desktops, tablets e smartphones
+├── fonts/                       # Fonte Yanone Kaffeesatz
+├── images/
+│   └── diego_photo.png          # Foto de perfil oficial
+└── pdf/                         # Acervo de teses e documentos acadêmicos
+```
 
-### Opção 1: Python
-No terminal PowerShell ou Prompt de Comando dentro desta pasta, execute:
+---
+
+## 4. Testes Locais e Atualização
+
+### Visualizar localmente:
 ```powershell
 python -m http.server 8000
 ```
-Depois abra seu navegador em `http://localhost:8000`.
+Acesse em: `http://localhost:8000`
 
-### Opção 2: VS Code Live Server
-Se utilizar o Visual Studio Code, basta instalar a extensão **Live Server** e clicar em **"Go Live"** no canto inferior direito.
-
----
-
-## 4. Publicação no GitHub Pages
-
-Para publicar como seu site oficial:
-
-1. **Crie o repositório no GitHub:**
-   - Acesse [github.com/new](https://github.com/new).
-   - Nome do repositório: `diegoperdigao.github.io` (exatamente com seu usuário e extensão `.github.io`).
-   - Mantenha-o público.
-
-2. **Conecte e envie este código:**
-   ```powershell
-   git add .
-   git commit -m "Initial commit: academic portfolio template replica"
-   git remote add origin https://github.com/diegoperdigao/diegoperdigao.github.io.git
-   git push -u origin main
-   ```
-
-3. **Verifique a ativação do GitHub Pages:**
-   - No GitHub, acesse **Settings > Pages**.
-   - Em **Source**, confirme que está selecionado **Deploy from a branch**, com branch **main** e pasta **/ (root)**.
-   - Dentro de alguns minutos, seu site estará no ar em:
-     **`https://diegoperdigao.github.io/`**
-
+### Enviar alterações para o ar:
+```powershell
+git add .
+git commit -m "update: descrição das mudanças"
+git push
+```
+O GitHub Pages atualiza o site automaticamente em menos de 1 minuto em: **`https://diegoperdigao.github.io/`**.

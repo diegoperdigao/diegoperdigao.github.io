@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
   <link rel="icon" type="image/png" href="favicon.ico">
-  <title>Charles Casimiro Cavalcante -- Research</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
+  <title>Diego Perdigão Sousa -- Research</title>
+  <meta name="description" content="Research areas of Diego Perdigão Sousa: Federated Learning, Prototype-Based Classifiers, Water Distribution Networks, and Fault Diagnosis." />
+  <meta name="keywords" content="Diego Perdigão Sousa, Research, Federated Learning, Prototype-Based Models, LVQ, Water Leakage, Condition Monitoring, IoT, UFC, KTH" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <!-- modernizr enables HTML5 elements and feature detects -->
@@ -17,229 +17,126 @@
     <header>
       <div id="logo">
         <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Charles Casimiro Cavalcante</a></h1>
-          <h2>Professor</h2>
+          <h1><a href="index.html">Diego Perdigão Sousa</a></h1>
+          <h2>D.Sc. in Teleinformatics Engineering | AI & Machine Learning Researcher</h2>
         </div>
       </div>
       <nav>
-       <ul class="sf-menu" id="nav">
+        <ul class="sf-menu" id="nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="publications.html">Publications</a></li>
           <li class="selected"><a href="research.html">Research</a></li>
-          <li><a href="#">Teaching</a>
-            <ul>
-              <li><a href="#">Graduate Courses</a>
-                <ul>
-                  <li><a href="adaptive_filtering.html">Adaptive Filtering</a></li>
-                  <li><a href="estimation_detection.html">Estimation and Detection</a></li>
-                  <li><a href="information_theory.html">Information Theory</a></li>
-                  <!--<li><a href="#">Stochastic Processes</a></li>-->
-                  <li><a href="bss.html">Blind Source Separation</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Undergraduate Courses</a>
-                <ul>
-                  <li><a href="statistics_eng.html">Statistics for Engineering</a></li>
-                  <li><a href="stochastic_processes.html">Stochastic Processes</a></li>
-                  <li><a href="statistical_sp.html">Statistical Signal Processing</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="students_theses.html">Theses & Degrees</a></li>
           <li><a href="service.html">Service</a></li>
-          <!--<li><a href="projects.html">Projects</a></li>-->
-          <li><a href="students_theses.html">Students & Theses</a></li>
           <li><a href="misc.html">Miscellaneous</a></li>
         </ul>
       </nav>
     </header>
+
     <div id="site_content">
+      <div class="content" style="width: 900px; margin: 0 auto; float: none;">
+        <h1 style="text-align: center; margin-bottom: 5px;">Research Areas & Projects</h1>
+        <p align="center" style="font-size: 14px; margin-bottom: 25px;">
+          <a href="#Areas">Key Research Areas</a> |
+          <a href="#Projects">Selected Projects</a> |
+          <a href="#Collaborations">Collaborations & Labs</a>
+        </p>
 
-    <p align="center">
-      <a href="#Research">Research Areas</a> | <a href="#Projects">Projects</a>
-      </p>
+        <!-- KEY RESEARCH AREAS -->
+        <a id="Areas"><h2><b>Key Research Areas</b></h2></a>
 
-    <a id="Research"><H1><b>Some of my research areas/interests</b></H1></a>
+        <!-- Area 1 -->
+        <h3 style="font-family:georgia,garamond,serif;font-size:20px;color:#2b5757;margin-top:20px;">
+          <b>Federated Learning & Edge Intelligence</b>
+        </h3>
+        <p style="text-align: justify; line-height: 1.6;">
+          Federated Learning (FL) has emerged as an essential paradigm for training machine learning models collaboratively across decentralized edge clients without transmitting raw, sensitive sensory measurements to a central server. In our research, we explore federated optimization under real-world IoT challenges: non-IID (non-identically and independently distributed) data, client drift, asynchronous client updates, and tight computational and bandwidth constraints. We develop novel federated frameworks that achieve robust convergence while preserving privacy and minimizing communication overhead.
+        </p>
 
+        <!-- Area 2 -->
+        <h3 style="font-family:georgia,garamond,serif;font-size:20px;color:#2b5757;margin-top:25px;">
+          <b>Prototype-Based Classifiers & Interpretable Machine Learning</b>
+        </h3>
+        <p style="text-align: justify; line-height: 1.6;">
+          Unlike high-capacity black-box models whose internal reasoning remains opaque, prototype-based classifiers—such as Learning Vector Quantization (LVQ) and its metric-learning extensions (GLVQ, GRLVQ, GMLVQ)—represent class knowledge explicitly as intuitive, human-inspectable reference prototypes in the input feature space. Our research investigates prototype-based architectures capable of yielding high classification accuracy, robust rejection thresholds for out-of-distribution events, and interpretable decision mechanisms suitable for mission-critical engineering applications.
+        </p>
 
-     <H2 style = "font-family:georgia,garamond,serif;font-size:20px;"><b>Statistical Signal Processing</b></H2>
+        <!-- Area 3 -->
+        <h3 style="font-family:georgia,garamond,serif;font-size:20px;color:#2b5757;margin-top:25px;">
+          <b>Smart Water Networks & Leakage Anomaly Detection</b>
+        </h3>
+        <p style="text-align: justify; line-height: 1.6;">
+          Municipal water distribution networks (WDNs) are vital urban infrastructures subject to significant losses due to physical pipe bursts and undetected background leaks. We apply advanced statistical signal processing and machine learning techniques to high-resolution hydraulic measurements (pressure transients, flow rates, and acoustic sensor signals). By integrating federated prototype models directly into edge telemetry loggers, we enable early detection and localization of real-world water leakage events while respecting data sovereignty across district metered areas (DMAs).
+        </p>
 
-     <p><span class="right"><img src="images/face-detection.jpg" alt="example graphic" height="180" width="305"" /></span>
+        <!-- Area 4 -->
+        <h3 style="font-family:georgia,garamond,serif;font-size:20px;color:#2b5757;margin-top:25px;">
+          <b>Predictive Maintenance & Fault Diagnosis in Electric Machinery</b>
+        </h3>
+        <p style="text-align: justify; line-height: 1.6;">
+          Condition monitoring of three-phase induction motors is critical for preventing catastrophic failures in manufacturing and energy facilities. Our work focuses on non-invasive diagnosis of early-stage stator winding inter-turn short-circuit faults. We explore acoustic emission signals, vibration signatures, and motor current signature analysis (MCSA) combined with prototype classifiers to achieve reliable fault discrimination across varying load regimes.
+        </p>
 
-      Considering signals or processes that present uncertainty brings the need of a statistical characterization of this random object, which can be either the input or the output a system, that can also present some uncertainty (randomness). The investigation on the modelling of both system and signals involved is the realm of statistical signal processing. The nature of the basic probabilistic description, and the derivation of the probabilistic description of the output signal given that of the input signal and the system characteristic is the fundamental object of interest in this topic. We can find several areas that fit into this description such as communications, control, image and video processing, speech and audio processing, biomedical signal processing, geophysical signal processing, financial signal processing, array processing, time series analysis, classification and regression, and pattern recognition. All those  topics provide a rich environment for the investigation on statistical modelling such as the consideration of linear and nonlinear systems, circular and noncircular distributions, robust strategies, real and complex-valued signals, among several other approaches. Also, the area of machine learning, and learning strategies in general, can be seen as being part of statistical signal processing and is also of interest since the rationale of them is the investigation of the statistics of the underlying models.
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ddd;" />
 
-      </p>
+        <!-- SELECTED PROJECTS -->
+        <a id="Projects"><h2><b>Selected Research Projects</b></h2></a>
 
-    <H2 style = "font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"><b>Wireless Communications</b></H2>
+        <div style="background-color: #fcfcfc; border-left: 4px solid #408080; padding: 15px 20px; margin-bottom: 20px;">
+          <h4 style="margin-top: 0; font-size: 16px; color: #2b5757;">
+            <b>Federated Prototype-Based Intelligence for Water Distribution Infrastructures</b>
+          </h4>
+          <p style="margin: 5px 0; font-size: 13.5px; line-height: 1.6; text-align: justify;">
+            <em>Description:</em> Development of decentralized, privacy-preserving machine learning frameworks deployed on IoT sensor nodes for monitoring municipal water distribution networks. Focused on localized model training, prototype synchronization, and robust anomaly classification for real-world leak detection.
+            <br/><em>Partners:</em> Federal University of Ceará (UFC, Brazil) and KTH Royal Institute of Technology (Sweden).
+          </p>
+        </div>
 
-    <p><span class="left"><img src="images/wireless_comm.png" alt="example graphic" height="180" width="305"" /></span>
+        <div style="background-color: #fcfcfc; border-left: 4px solid #408080; padding: 15px 20px; margin-bottom: 20px;">
+          <h4 style="margin-top: 0; font-size: 16px; color: #2b5757;">
+            <b>Intelligent Condition Monitoring and Fault Diagnosis in Induction Motors</b>
+          </h4>
+          <p style="margin: 5px 0; font-size: 13.5px; line-height: 1.6; text-align: justify;">
+            <em>Description:</em> Investigation of metric-learning and prototype-based classifiers for non-invasive short-circuit fault identification in three-phase induction motors, evaluating multi-sensor feature extraction (acoustic and electrical) under operational variations.
+            <br/><em>Affiliation:</em> Department of Teleinformatics Engineering (DETI), UFC.
+          </p>
+        </div>
 
-    Communication over air interface has become the standard way of providing connection to several types of services (voice, audio, image, video, etc) and drive the digital revolution in the present days. Along with several possibilities, these systems bring several challenges: transceiver design, physical layer optimization, resource allocation, spectrum sharing, multiple-input multiple-output (MIMO) channels, non-orthogonal access are just some of the problems we are interested in wireless communication systems. Present and future wireless systems are being a fertile field for the application of signal processing and artificial intelligence strategies so we could devise better solutions for the upcoming commercial systems. Also, distributed systems and networks are part of our focus whenever we want to provide some learning capability into the system so it can be adjusted with respect to the available data and the constraints we have at hand (such as power, bandwidth, etc). Finally, performance evaluation and bounds are also of interest for the characterization of the limits in the challenging scenarios of wireless communications.  </p>
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ddd;" />
 
-    <H2 style = "font-family:georgia,garamond,serif;font-size:20px;"><b>Information Geometry</b></H2>
-        <!--<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-         This is demo text
-      </p>-->
-    <p><span class="right"><img src="images/inf_geometry.png" alt="example graphic" height="180" width="305"" /></span>
-
-    In mathematics, differential geometry may be defined as the intrinsic geometric study of differentiable manifolds (roughly, a differentiable manifold is a smooth hypersurface in an arbitrary dimension). Over the past years, the signal processing community has paid increasing attention to the tools of differential geometry. This was due to the realisation that many signal processing problems have a natural formulation using differentiable manifolds, which often leads to more reliable and efficient algorithms. To give only one example, Lie groups, which form a relatively basic class of differentiable manifolds, are today unavoidable in pattern recognition, object tracking, array signal processing, and space-time coding in wireless communications. At present, it seems the connection between differential geometry and signal processing is set to grow stronger, especially as the signal processing community continues to explore new applications, and to make use of growing computational resources. In this context, this are covers one of the more recent venues for interaction between differential geometry and signal processing,  namely through signal processing applications of statistical learning and inference on manifolds. Most existing differential-geometric methods and algorithms in signal processing are based on classical approaches, such as iterative optimisation or Kalman filtering, and are concerned with standard signal models, such as linear channel and additive white noise models. On the other hand, the point of view of statistical learning and inference leads to innovative approaches, such as evolutionary optimisation or kernel/mixture model probability density estimation, and to original modeling tools, including a variety of new probability distributions defined on manifolds. The challenges of online data processing, and of large volumes of data, in complex real-world applications, motivate the development of new algorithms and new models, within the highly subtle and flexible paradigm of statistical learning and inference.</p>
-
-
-    <HR/>
-
-       <a id="Projects"> <H1><b>Projects</b></H1></a>
-
-       <a id="Current_projects"><H2>Current projects</H2></a>
-
-       <ol>
-         <!--         <blockquote>
-           <H4><FONT color="#0FCFEB">Distributed Information Systems: Information Geometry and Complex-Valued Signals (2017-2021)</FONT></H4>
-           <em><b>Description:</b></em> This project seeks to use modern information processing methods, which use information about the geometric aspects of the probability spaces and the non-circularity present in information signals to propose new methods of information retrieval in distributed processing systems. The mechanisms for adapting solutions to commercial wireless communication systems are the main vector of the project and guide the development of the theoretical aspects of the methods under investigation.
-           <br/><em><b>Funded by:</b></em> Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), Brazil.
-           <p> </p>
-         </blockquote>-->
-
-
-         <blockquote>
-           <H4><FONT color="#0FCFEB">Signal Processing Meets Machine Learning: Federated Learning and Conformal Prediction (2024-2028)</FONT></H4>
-           <em><b>Description:</b></em> This project is devoted to the research into topics of interest which focus on aspects of aspects of distributed systems, with special attention to data privacy aspects, and the use of optimization methods that combine machine learning and statistical signal processing in themes that illustrate the convergence of these two areas, with applications in scenarios of high interest for both industrial and academic sectors. We are interested in the development of signal processing methods for the usage in machine learning algorithms and statistical signal processing for distributed systems, federated learning, statistical prediction methods, and treatment of multivariate data, the latter with special interest in natural language processing aspects..
-           <br/><em><b>Funded by:</b></em> Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), Brazil.
-           <p> </p>
-         </blockquote>
-
-
-       <a id="Completed_projects"><H2>Recent completed projects</H2></a>
-
-       <p>(click on the titles for further details)</p>
-
-
-       <details>
-       <summary><b>Advanced AI and Signal Processing Techniques for Modeling of Complex Dynamical Systems</b></summary>
-       <p> Funded by: Fundação Cearense de Apoio ao Desenvolvimento Científico e Tecnológico (Funcap), concluded in 2024.
-       <br/><em>This research project aims to use modern methods of artificial intelligence, in particular using machine learning and information processing techniques, to provide solutions for real problems in scenarios such as those found in mobile communications, robotics and automation. Our target is on the models and techniques which allow a suitable adaptation to several types of available information as well as a wider range of the applications which can benefit from the proposed solutions. In this sense, we aim to study parameter estimation and system optimization methods which allow to handle tasks such as: i) classification; ii) detection; iii) visualization; and iv) linear and nonlinear systems optimization. We use adaptive solutions in order to reduce the dependence of previous knowledge about the data and also kernel methods which bring interesting benefits for scenarios with sparse information. The methods of interest are applied in scenarios of dynamic systems identification, robust filtering, modeling and prediction of signals, robotic trajectories, fake news detection, classification and detection in streaming data, facil recognition, among others.</em></p>
-       </details>
-       
-       <br/>
-       
-        <details>
-        <summary><b>Optimization and Distributed Systems: Robust Statistics and Machine Learning</b></summary>
-        <p> Funded by: CNPq, concluded in 2024.
-        <br/><em>Description: This project is devoted to the research into topics of interest which focus on aspects of distributed systems and statistical tools that allow estimation and optimization for the purpose of retrieving information in such systems. We are interested in the development of signal processing methods for the usage in machine learning algorithms and robust statistics for the application in mobile communications, IoT, natural language processing and independent vector analysis (IVA).</em></p>
-        </details>
-
-        <br/>
-
-        <details>
-        <summary><b>Geometry and Optimization on Statistical Manifolds: Applications in Signal and Image Processing - GROSS</b></summary>
-        <p> Funded by: Fundação Cearense de Apoio ao Desenvolvimento Científico e Tecnológico (Funcap) in Brazil and Centre National de la Recherche Scientifique (CNRS) in France.
-        <br/><em>Partnership with  Laboratoire de l'Intégration du Matériau au Système (IMS), Université de Bordeaux, France, concluded in April 2022</em>
-        <br/><em>Description: This research project aims to study, propose and evaluate new statistical models of optimization on manifolds in consideration of information-geometric aspects as part of the analysis and proposed methods. In general, we seek to optimize the performance of signal and image processing systems through appropriate metrics, using advanced tools and geometrical strategies with the goal of providing performance gains and more general models which are able to model a broader set of applications in estimation and recovering of information. </em></p>
-        </details>
-
-        <br/>
-
-        <details>
-        <summary><b>Integrated Backhaul and Beam Management in Evolved 5G Access</b></summary>
-        <p> Funded by Ericsson Research, participation concluded in April 2022.
-        <br/><em>Description: This research project aims at the development of computational models that allow the performance evaluation of mobile systems that apply the signal processing techniques, also focusing on the innovation component through new algorithms and processes. It also aims to establish know-how on next generation cellular networks in the specific aspects of their implementation and management, following the precepts of the appropriate standards. In this context, knowledge about advanced functionalities in the design of the physical layer and the access layer is taken into account whenever it represents a restriction on performance. The activities also include the development of simulation tools that incorporate this knowledge and allow the analysis of practical scenarios with flexibility and speed, enabling a critical cost-benefit analysis on the different alternatives selected in each scenario. In particular, our goal is to propose and analyze architectures of transceivers, algorithms for processing radio signals and topologies of access network capable of establishing robust links of mobile radio communication through effective procedures of initial access to next generation wireless access networks, using for this also the direct integration of the access network with the transport network, enabling a highly distributed and flexible wireless network architecture, adaptable to the most different practical deployment needs, making use of this objective of transmission through multiple MIMO antennas and machine intelligence techniques, capable of estimating and dynamically allocating access network resources, such as: bandwidth, power, access time and antennas, applying the proposed techniques to a large number of users with high traffic demand considering latency and performance restrictions, thus allowing to explore the benefits that come from such as increases in capacity and quality of service.</em></p>
-        </details>
-
-        <br/>
-
-       <details>
-       <summary><b>Smart Water: Internet of Things for Water Distribution Systems - SWITS</b></summary>
-       <p>Funded by CAPES-Brazil and STINT-Sweden, concluded in 2021.
-        <br/><em>Partnership with Royal Institute of Technology (KTH), Stockholm, Sweden.</em>
-        <br/><em>Description: The definite way to solve these problems is the investigation of efficient IoT networking solutions, novel data analysis methods, and reliable resource allocation strategies that minimize the time for detection of contamination events and leakages. The main objective of this project is to propose fundamental investigation with wireless communications, machine learning, and optimal resource allocation theory for IoT systems. This project will consider networks of fixed and mobile sensors (mechanical, chemical and micro-biological) and actuators (biocide dosage, smart valves and pumps) wirelessly interconnected over the water distribution networks, and their integration into a global intelligent IoT system to perform automatic monitoring and control of leakages and contaminations. The project’s research will ultimately contribute to providing solutions capable to ensure the best health protection from any contaminant, while minimizing the management and maintenance costs.</em></p>
-        </details>
-
-        <br/>
-
-       <details>
-       <summary><b>Distributed Information Systems: Information Geometry and Complex-Valued Signals</b></summary>
-       <p>Funded by CNPq, concluded in 2021
-       <br/><em>Description: This project seeks to use modern information processing methods, which use information about the geometric aspects of the probability spaces and the non-circularity present in information signals to propose new methods of information retrieval in distributed processing systems. The mechanisms for adapting solutions to commercial wireless communication systems are the main vector of the project and guide the development of the theoretical aspects of the methods under investigation.</em></p>
-       </details>
-
-       <br/>
-
-       <details>
-       <summary><b>Statistical Signal Processing: Methods and Applications </b></summary>
-       <p>Funded by CNPq, concluded in 2021
-       <br/><em>Description:  This research project is located in the area of Signals Processing in Information Systems. Although this area is quite broad, we focused on the statistical processing aspects of interference suppression in multiple input multiple output (MIMO) systems and modeling aspects considering geometric aspects in information retrieval systems. The advanced tools we consider in this project allow application in a large number of information systems, not only in the classic problem of digital communications, such as voice processing, images, and sometimes lesser known areas of the processing community signals, such as remote sensing and seismic deconvolution.</em></p>
-       </details>
-
-       <br/>
-
-
-       <details>
-        <summary><b>Network Assisted Cellular V2X Communications</b></summary>
-        <p>Funded by Ericsson, concluded in 2020.
-        <br/><em>Description: One important task in the optimization of wireless communication systems is the knowledge or estimation of quality-of-service (QoS) levels among connected devices. In general, QoS is the description or measurement of the overall performance of a service. In the wireless communication context, QoS measurements may include throughput, latency, block error rate, RSRP, RSRQ, CQI, etc. Predicting QoS levels plays a key role in latency-constrained applications. QoS prediciton can provide the application ahead of time information about the availability of the service required by that application. Such procedure may increase the reliability in safety-critical applications as well as to improve user experience in non-safety-critical ones. The main issue in this approach is how to handle a suitable system model and yet providing good prediction capabilities so that low latency and high reliability on the measurements are still possible. With those constraints and requirements in mind, machine learning techniques arise as powerful candidates for predictive tasks. In this context, machine learning (ML) represents an effective and versatile set of tools to exploit and mine the massive amounts of data generated and facilitate the decision making to improve the performance in the vehicular networks. Nevertheless, the performance of the machine learning techniques strongly depends on the amounts and nature of the training data. However, in real world applications the training data may be noisy and partially not available, or otherwise, contain a large volume of irrelevant data, that would hinder the learning process and increase the processing time of the algorithm. In such cases, it is important to incorporate additional procedures, e.g. data cleaning, feature selection, etc., during the training phase. For this tasks, graph signal processing tools are adopted to further improve such prediction tasks reducing the search space and thus computation efforts.</em></p>
-       </details>
-
-       <br/>
-
-       <details>
-        <summary><b>Signal and Information Processing with Applications in Telecommunications and Biomedical Engineering</b></summary>
-        <p>Funded by CAPES-Brazil and COFECUB-France, concluded in 2018.
-        <br/><em>Partnership with UFRJ-Brazil, UFSC-Brazil, SUPELEC-France, CNAM-France, GIPSA-CNRS-France and I3S-France.</em>
-        <br/><em>Description: This project aims to develop new methods of modeling and digital processing of information from multidimensional representation of data to be processed. Fundamental issues to be addressed are related to both the design and modeling of new cooperative communication, as well as specific treatments, such as massive MIMO coding, transmission/reception systems, the estimation of communication channels, the processing in sensor arrays and the separation of sources. The biomedical applications considered concern the support of medical diagnosis through the classification/ecognition of abnormalities in ECG signals for the analysis of cardiac arrhythmias, non-invasive estimation of respiratory rhythm and interpretation of cardiovascular data at risk patients.</em></p>
-       </details>
-
-       <br/>
-
-       <details>
-        <summary><b>5G Radio Access Network</b></summary>
-        <p>Funded by Ericsson, concluded in 2018.
-        <br/><em>Description: This project is devoted to the subject of 5G radio access network architecture and potential related applications. In particular distributed processing is considered for highly scalable problems in wireless networks, such as in the case of massive MIMO communications in dense environments (e.g. a massive machine type communications scenario). The RAN architecture aspect is investigated when considering that multiple radio access technologies will co-exist (e.g. NR  and LTE) and their integration might lead to improved QoS through RAT selection and common radio resource management. </em></p>
-       </details>
-
-       <br/>
-
-       <details>
-        <summary><b>Distributed Optimization and Massive MIMO Transceivers for 5G Wireless Communications</b></summary>
-        <p>Funded by Ericsson, concluded in 2016.
-        <br/><em>Description: In this project, we investigate and develop new solutions for transceiver design in MIMO communication systems by taking into account aspects of distributed parameter optimization and estimation in the MIMO wireless networks, as well as issues related to channel estimation and beamforming in very-large scale MIMO systems. The idea of using distributed processing approaches is to decentralize optimization and estimation tasks across a network of communicating nodes. This has the potential to reduce the total signaling and computational complexity in the network, improve the scalability, and eliminate the reliance on a central processing node. Distributed processing solutions can fit well to future wireless communication scenarios that involve heterogeneous deployments where communication links among fixed and mobile network nodes (e.g. relays, user devices, base stations, vehicles) may be established. In this context, distributed signal processing solutions for parameter optimization (e.g. precoder selection, spectrum allocation) and for parameter estimation (e.g. channel estimation and symbol recovery) will be studied focusing in aspects of continuous variables of interest in a wireless network, such as transmission power. Second, very-large-scale MIMO (VL-MIMO) systems that employ tens or hundreds of antennas collocated at the base station per cell site have a potential to substantially improve the spectral efficiency of a wireless communication system both in the uplink and downlink. In such systems an accurate estimation with a minimal overhead, as well as low-complexity receiver structures and algorithms for symbol recovery in the presence of co-channel interference are of paramount importance and will be addressed in this project.</em></p>
-       </details>
-
-
-        <br/>
-
-       <details>
-        <summary><b>Information Geometry: Methods and Advances in Modern Information Systems</b></summary>
-        <p>Funded by FUNCAP-Brazil, concluded in 2016.
-        <br/><em>Description: This research project aims to study, propose and evaluate new mathematical models of digital communications systems in the consideration of multilinear tools and geometric aspects as an integral part of the analysis and proposal of optimization metrics. In general, the aim is to optimize the performance of the physical layer through appropriate metrics, using advanced signal processing tools and geometric strategies in order to provide significant performance gains for communications systems with the characteristics of the future mobile communications systems, reducing the interference introduced by the system, whether due to multiple access, modeling inaccuracy, inadequate analysis methods or limitations of the means of transmission in digital communications systems.</em></p>
-       </details>
-
-       <br/>
-
-       <details>
-        <summary><b>Heterogeneous Communication Networks: Interference Alignment and Cognitive Radio</b></summary>
-        <p>Funded by FUNCAP-Brazil, concluded in 2014.
-        <br/><em>Partnership with SUPELEC-France.</em>
-        <br/><em>Description: This research project aims to study, propose and evaluate new models of transceivers for multi-user wireless communication systems with the use of multiple antennas and cooperation between some elements of the system when considering heterogeneous communication networks. In general, we seek to design robust structures for coordinated systems and find capacity limitations for such configurations in order to provide significant performance gains for communication systems with the characteristics of future mobile communications systems, mitigating interference from multiple system access, limiting factor of performance in digital communications systems, through the efficient use of the spectrum, cooperation with relays in environments with little channel information as well as interference alignment strategies in the design of precoders in coordinated systems.</em></p>
-       </details>
-
-
-
-
-
-
-
-
-
+        <!-- COLLABORATIONS -->
+        <a id="Collaborations"><h2><b>Research Laboratories & Collaborations</b></h2></a>
+        <ul style="line-height: 1.8;">
+          <li>
+            <strong><a href="http://www.gtel.ufc.br" target="_blank">GTEL (Wireless Telecommunications Research Group)</a></strong> — Federal University of Ceará (UFC), Fortaleza, Brazil.
+          </li>
+          <li>
+            <strong><a href="https://people.kth.se/~carlofi/" target="_blank">Network and Systems Engineering Division</a></strong> — KTH Royal Institute of Technology, Stockholm, Sweden (Prof. Carlo Fischione).
+          </li>
+          <li>
+            <strong><a href="https://www.deti.ufc.br" target="_blank">Department of Teleinformatics Engineering (DETI / PPGETI)</a></strong> — Federal University of Ceará (UFC).
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div id="scroll">
       <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a>
     </div>
+
     <footer>
-      <p><a href="index.html">Home</a> | <a href="publications.html">Publications</a> | <a href="research.html">Research</a> | <a href="service.html">Service</a> | <a href="students_theses.html">Students&Theses</a> | <a href="misc.html">Miscellaneous</a> </p>
-      <p>Copyright &copy; CSS3_four | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+      <p>
+        <a href="index.html">Home</a> | 
+        <a href="research.html">Research</a> | 
+        <a href="publications.html">Publications</a> | 
+        <a href="students_theses.html">Theses & Degrees</a> | 
+        <a href="service.html">Service</a> | 
+        <a href="misc.html">Miscellaneous</a>
+      </p>
+      <p>Diego Perdigão Sousa &copy; 2026 | Academic Portfolio</p>
     </footer>
   </div>
+
   <p>&nbsp;</p>
   <!-- javascript at the bottom for fast page loading -->
   <script type="text/javascript" src="js/jquery.js"></script>

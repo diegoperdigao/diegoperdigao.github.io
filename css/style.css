@@ -239,7 +239,7 @@ nav {
   color: #444;
 } 
 
-#content {  
+#content, .content {  
   text-align: left;
   width: 600px;
   padding: 0 0 0 5px;

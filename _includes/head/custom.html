@@ -1,0 +1,43 @@
+{% include base_path %}
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ base_path }}/images/android-chrome-192x192.png" sizes="192x192">
+<link rel="shortcut icon" href="{{ base_path }}/images/favicon.ico">
+<meta name="theme-color" content="#ffffff" id="site-theme-color">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+
+<!-- Language (EN / PT) & Theme (Light / Dark) pre-paint state init -->
+<style>
+  html:not([data-site-lang="pt"]) .lang-pt { display: none !important; }
+  html[data-site-lang="pt"] .lang-en { display: none !important; }
+  html[data-site-theme="dark"] .theme-icon--moon { display: none !important; }
+  html:not([data-site-theme="dark"]) .theme-icon--sun { display: none !important; }
+</style>
+<script>
+  (function () {
+    try {
+      var savedLang = localStorage.getItem('site_lang');
+      var lang = (savedLang === 'pt') ? 'pt' : 'en';
+      document.documentElement.setAttribute('data-site-lang', lang);
+      document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en-US');
+
+      var savedTheme = localStorage.getItem('site_theme');
+      var theme = (savedTheme === 'dark') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-site-theme', theme);
+      var metaTheme = document.getElementById('site-theme-color');
+      if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#0f1419' : '#ffffff');
+    } catch (e) {
+      document.documentElement.setAttribute('data-site-lang', 'en');
+      document.documentElement.setAttribute('data-site-theme', 'light');
+    }
+  })();
+</script>
+
+<!-- Support for MathJax -->
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- end custom head snippets -->

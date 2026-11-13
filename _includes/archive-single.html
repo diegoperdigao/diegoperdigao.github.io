@@ -1,0 +1,128 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% if post.title_pt %}
+    {% assign title_pt = post.title_pt | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% endif %}
+{% else %}
+  {% assign title = post.title %}
+  {% if post.title_pt %}
+    {% assign title_pt = post.title_pt %}
+  {% endif %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item{% if post.collection == 'portfolio' %} portfolio-item-wrap{% endif %}"{% if post.topics %} data-topics="{{ post.topics | join: ' ' }}"{% endif %}>
+  <article class="archive__item{% if post.collection == 'portfolio' %} portfolio-item-card{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src=
+          {% if teaser contains "://" %}
+            "{{ teaser }}"
+          {% else %}
+            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+          {% endif %}
+          alt="">
+      </div>
+    {% endif %}
+
+    {% if post.collection == 'portfolio' and post.badge %}
+      <div class="portfolio-meta-row">
+        <span class="portfolio-badge portfolio-badge--{{ post.category | default: 'academic' }}">
+          {% if post.badge_pt %}
+            <span class="lang-en">{{ post.badge }}</span><span class="lang-pt">{{ post.badge_pt }}</span>
+          {% else %}
+            {{ post.badge }}
+          {% endif %}
+        </span>
+        {% if post.period %}
+          <span class="portfolio-period">{{ post.period }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <h2 class="archive__item-title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{% if post.title_pt %}<span class="lang-en">{{ title }}</span><span class="lang-pt">{{ title_pt }}</span>{% else %}{{ title }}{% endif %}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{% if post.title_pt %}<span class="lang-en">{{ title }}</span><span class="lang-pt">{{ title_pt }}</span>{% else %}{{ title }}{% endif %}</a>
+      {% endif %}
+    </h2>
+
+    {% if post.read_time %}
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+    {% endif %}
+
+    {% if post.collection == 'teaching' %}
+      <p>{% if post.type_pt %}<span class="lang-en">{{ post.type }}</span><span class="lang-pt">{{ post.type_pt }}</span>{% else %}{{ post.type }}{% endif %}, <i>{{ post.venue }}</i></p>
+    {% elsif post.collection == 'publications' %}
+      <p class="pub-venue-line">
+        <span class="lang-en">Published in</span><span class="lang-pt">Publicado em</span>
+        <i>{% if post.venue_pt %}<span class="lang-en">{{ post.venue }}</span><span class="lang-pt">{{ post.venue_pt }}</span>{% else %}{{ post.venue }}{% endif %}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
+      </p>
+    {% elsif post.collection == 'portfolio' %}
+      {% if post.tags and post.tags.size > 0 %}
+        <div class="portfolio-tags">
+          {% for tag in post.tags %}
+            <span class="topic-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% elsif post.date %}
+      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+    {% endif %}
+
+    {% if post.excerpt and site.read_more != 'enabled' %}
+      {% if post.excerpt_pt %}
+        <div class="archive__item-excerpt lang-en" itemprop="description">{{ post.excerpt | markdownify }}</div>
+        <div class="archive__item-excerpt lang-pt" itemprop="description">{{ post.excerpt_pt | markdownify }}</div>
+      {% else %}
+        <div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</div>
+      {% endif %}
+    {% elsif post.excerpt and site.read_more == 'enabled' %}
+      <div class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></div>
+    {% endif %}
+
+    {% if post.citation %}
+      <p class="pub-citation-line"><span class="lang-en">Recommended citation:</span><span class="lang-pt">Citação recomendada:</span> {{ post.citation }}</p>
+    {% endif %}
+
+    {% if post.paperurl or post.slidesurl or post.bibtex %}
+      <div class="pub-actions">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" class="pub-action-btn pub-action-btn--link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            <span class="lang-en">Access Paper</span><span class="lang-pt">Acessar Texto</span>
+          </a>
+        {% endif %}
+        {% if post.slidesurl %}
+          <a href="{{ post.slidesurl }}" class="pub-action-btn pub-action-btn--link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
+            <span class="lang-en">Download Slides</span><span class="lang-pt">Baixar Slides</span>
+          </a>
+        {% endif %}
+        {% if post.bibtex %}
+          {% assign bib_id = post.url | slugify | prepend: 'bib-' %}
+          <button type="button" class="pub-action-btn" data-copy-bibtex="{{ bib_id }}">
+            <i class="fa-regular fa-copy" aria-hidden="true"></i>
+            <span class="pub-copy-default"><span class="lang-en">Copy BibTeX</span><span class="lang-pt">Copiar BibTeX</span></span>
+            <span class="pub-copy-done"><span class="lang-en">Copied!</span><span class="lang-pt">Copiado!</span></span>
+          </button>
+        {% endif %}
+      </div>
+      {% if post.bibtex %}
+        <details class="pub-bibtex-details">
+          <summary>BibTeX</summary>
+          <pre id="{{ bib_id }}" class="pub-bibtex-code">{{ post.bibtex | strip }}</pre>
+        </details>
+      {% endif %}
+    {% endif %}
+
+  </article>
+</div>

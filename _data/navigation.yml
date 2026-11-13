@@ -1,0 +1,25 @@
+# Main navigation order in the header.
+main:
+  - title: "Publications"
+    title_pt: "Publicações"
+    url: /publications/
+
+  - title: "R&D Portfolio"
+    title_pt: "Portfólio de P&D"
+    url: /portfolio/
+
+  - title: "Talks"
+    title_pt: "Palestras"
+    url: /talks/
+
+  - title: "Theses & Mentoring"
+    title_pt: "Teses & Orientações"
+    url: /theses/
+
+  - title: "Experience"
+    title_pt: "Experiência"
+    url: /experience/
+
+  - title: "CV"
+    title_pt: "Currículo"
+    url: /cv/

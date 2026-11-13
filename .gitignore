@@ -1,15 +1,12 @@
-# OS Files
-.DS_Store
-Thumbs.db
-desktop.ini
+# Ignore the contents of the _site directory
+_site/
 
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
+# Ignore the directory for local files during development
+local/
 
-# Temporary files
-*~
-*.tmp
+# Ignore the Gemfile that is generated
+Gemfile.lock
 
+# Ingore files created by npm
+node_modules
+package-lock.json

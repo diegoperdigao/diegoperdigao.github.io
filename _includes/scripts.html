@@ -1,0 +1,144 @@
+<script src="{{ base_path }}/assets/js/main.min.js"></script>
+
+<script>
+  (function () {
+    // 1. Language Switcher (EN | PT)
+    function syncLanguageUI(lang) {
+      var normalized = (lang === 'pt') ? 'pt' : 'en';
+      document.documentElement.setAttribute('data-site-lang', normalized);
+      document.documentElement.setAttribute('lang', normalized === 'pt' ? 'pt-BR' : 'en-US');
+      var buttons = document.querySelectorAll('.lang-switcher__btn');
+      for (var i = 0; i < buttons.length; i++) {
+        var btn = buttons[i];
+        var isActive = btn.getAttribute('data-set-lang') === normalized;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      }
+    }
+
+    // 2. Theme Switcher (Light | Dark)
+    function syncThemeUI(theme) {
+      var normalized = (theme === 'dark') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-site-theme', normalized);
+      var metaTheme = document.getElementById('site-theme-color');
+      if (metaTheme) metaTheme.setAttribute('content', normalized === 'dark' ? '#0f1419' : '#ffffff');
+      var toggleBtn = document.querySelector('[data-toggle-theme]');
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-pressed', normalized === 'dark' ? 'true' : 'false');
+      }
+    }
+
+    syncLanguageUI(document.documentElement.getAttribute('data-site-lang') || 'en');
+    syncThemeUI(document.documentElement.getAttribute('data-site-theme') || 'light');
+
+    // Ensure greedy-nav measures active language labels properly on load
+    if ((document.documentElement.getAttribute('data-site-lang') || 'en') === 'pt') {
+      window.dispatchEvent(new Event('resize'));
+    }
+
+    // 3. Portfolio Topic Filter
+    function applyPortfolioFilter(topic) {
+      var items = document.querySelectorAll('.portfolio-item-wrap[data-topics]');
+      if (!items.length) return;
+
+      var visibleCount = 0;
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var topics = (item.getAttribute('data-topics') || '').split(/\s+/);
+        var match = (topic === 'all') || (topics.indexOf(topic) !== -1);
+        item.classList.toggle('is-hidden-by-filter', !match);
+        if (match) visibleCount++;
+      }
+
+      var sections = document.querySelectorAll('[data-portfolio-section]');
+      for (var j = 0; j < sections.length; j++) {
+        var sec = sections[j];
+        var secItems = sec.querySelectorAll('.portfolio-item-wrap:not(.is-hidden-by-filter)');
+        sec.classList.toggle('is-hidden-by-filter', secItems.length === 0);
+      }
+
+      var pills = document.querySelectorAll('[data-filter-topic]');
+      for (var k = 0; k < pills.length; k++) {
+        var pill = pills[k];
+        var active = pill.getAttribute('data-filter-topic') === topic;
+        pill.classList.toggle('is-active', active);
+        pill.setAttribute('aria-pressed', active ? 'true' : 'false');
+      }
+
+      var counterEn = document.querySelector('[data-filter-count-en]');
+      var counterPt = document.querySelector('[data-filter-count-pt]');
+      if (counterEn) counterEn.textContent = 'Showing ' + visibleCount + ' of ' + items.length + ' projects';
+      if (counterPt) counterPt.textContent = 'Exibindo ' + visibleCount + ' de ' + items.length + ' projetos';
+    }
+
+    // Fallback copy helper when navigator.clipboard is unavailable
+    function copyTextToClipboard(text, onDone) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(onDone, function () {
+          fallbackCopy(text, onDone);
+        });
+      } else {
+        fallbackCopy(text, onDone);
+      }
+    }
+
+    function fallbackCopy(text, onDone) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      onDone();
+    }
+
+    // Delegated click handler
+    document.addEventListener('click', function (evt) {
+      var target = evt.target;
+      if (!target || !target.closest) return;
+
+      var langBtn = target.closest('[data-set-lang]');
+      if (langBtn) {
+        var chosen = langBtn.getAttribute('data-set-lang');
+        try { localStorage.setItem('site_lang', chosen); } catch (e) {}
+        syncLanguageUI(chosen);
+        window.dispatchEvent(new Event('resize'));
+        return;
+      }
+
+      var themeBtn = target.closest('[data-toggle-theme]');
+      if (themeBtn) {
+        var currentTheme = document.documentElement.getAttribute('data-site-theme') === 'dark' ? 'dark' : 'light';
+        var nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('site_theme', nextTheme); } catch (e) {}
+        syncThemeUI(nextTheme);
+        return;
+      }
+
+      var filterBtn = target.closest('[data-filter-topic]');
+      if (filterBtn) {
+        applyPortfolioFilter(filterBtn.getAttribute('data-filter-topic'));
+        return;
+      }
+
+      var copyBtn = target.closest('[data-copy-bibtex]');
+      if (copyBtn) {
+        var targetId = copyBtn.getAttribute('data-copy-bibtex');
+        var codeEl = targetId ? document.getElementById(targetId) : null;
+        if (!codeEl) return;
+        copyTextToClipboard(codeEl.textContent.trim(), function () {
+          copyBtn.classList.add('is-copied');
+          clearTimeout(copyBtn._copyTimer);
+          copyBtn._copyTimer = setTimeout(function () {
+            copyBtn.classList.remove('is-copied');
+          }, 1800);
+        });
+      }
+    });
+  })();
+</script>
+
+{% include analytics.html %}
+{% include /comments-providers/scripts.html %}

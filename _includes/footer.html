@@ -1,0 +1,24 @@
+{% include base_path %}
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    <li><strong><span class="lang-en">Profiles:</span><span class="lang-pt">Perfis:</span></strong></li>
+    {% if site.author.googlescholar %}
+      <li><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar</a></li>
+    {% endif %}
+    {% if site.author.researchgate %}
+      <li><a href="{{ site.author.researchgate }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate" aria-hidden="true"></i> ResearchGate</a></li>
+    {% endif %}
+    {% if site.author.linkedin %}
+      <li><a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    {% endif %}
+    {% if site.author.github %}
+      <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    {% endif %}
+    {% if site.atom_feed.hide != true %}
+      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. <span class="lang-en">Powered by</span><span class="lang-pt">Desenvolvido com</span> <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io" rel="nofollow">AcademicPages</a>.</div>

@@ -1,0 +1,116 @@
+---
+layout: archive
+title: "R&D Portfolio & Research"
+title_pt: "Portfólio de P&D e Pesquisa"
+permalink: /portfolio/
+author_profile: true
+redirect_from:
+  - /research.html
+  - /portfolio.html
+---
+
+{% include base_path %}
+
+<div class="lang-en" markdown="1">
+
+Structured overview of regulated and incentivized R&amp;D initiatives coordinated at **Instituto Gridtech (Hexing Brasil)** alongside international and national **academic research programs** developed with **UFC**, **KTH Royal Institute of Technology**, and **Uppsala University**.
+
+</div>
+
+<div class="lang-pt" markdown="1">
+
+Visão estruturada dos portfólios de P&amp;D regulado e incentivado coordenados no **Instituto Gridtech (Hexing Brasil)** em conjunto com linhas de **pesquisa acadêmica** desenvolvidas com a **UFC**, o **KTH Royal Institute of Technology** e a **Universidade de Uppsala**.
+
+</div>
+
+{% if site.portfolio_category %}
+  <div class="wordwrap pub-toc"><strong><span class="lang-en">Jump to:</span><span class="lang-pt">Ir para:</span></strong>
+    {% assign shown = 0 %}
+    {% for category in site.portfolio_category %}
+      {% assign cat_posts = site.portfolio | where: "category", category[0] %}
+      {% if cat_posts.size > 0 %}
+        {% if shown > 0 %} &middot; {% endif %}<a href="#{{ category[0] }}"><span class="lang-en">{{ category[1].title }}</span><span class="lang-pt">{{ category[1].title_pt | default: category[1].title }}</span></a>{% assign shown = shown | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    &middot; <a href="#research-lines"><span class="lang-en">Research Lines &amp; Partners</span><span class="lang-pt">Linhas de Pesquisa &amp; Parceiros</span></a>
+  </div>
+{% endif %}
+
+<div class="portfolio-filter-bar" role="group" aria-label="Filter projects by domain">
+  <button type="button" class="filter-pill is-active" data-filter-topic="all" aria-pressed="true">
+    <span class="lang-en">All ({{ site.portfolio.size }})</span><span class="lang-pt">Todos ({{ site.portfolio.size }})</span>
+  </button>
+  <button type="button" class="filter-pill" data-filter-topic="smartgrid" aria-pressed="false">
+    <span class="lang-en">Smart Grid &amp; ANEEL</span><span class="lang-pt">Smart Grid &amp; ANEEL</span>
+  </button>
+  <button type="button" class="filter-pill" data-filter-topic="embedded" aria-pressed="false">
+    <span class="lang-en">Embedded, Metering &amp; Industrial</span><span class="lang-pt">Embarcados, Medição &amp; Indústria</span>
+  </button>
+  <button type="button" class="filter-pill" data-filter-topic="ai" aria-pressed="false">
+    <span class="lang-en">AI, Federated ML &amp; Data</span><span class="lang-pt">IA, Aprendizado Federado &amp; Dados</span>
+  </button>
+  <button type="button" class="filter-pill" data-filter-topic="academia" aria-pressed="false">
+    <span class="lang-en">Academia (UFC / KTH / Uppsala)</span><span class="lang-pt">Academia (UFC / KTH / Uppsala)</span>
+  </button>
+</div>
+
+<p class="portfolio-filter-status">
+  <span class="lang-en" data-filter-count-en>Showing {{ site.portfolio.size }} of {{ site.portfolio.size }} projects</span>
+  <span class="lang-pt" data-filter-count-pt>Exibindo {{ site.portfolio.size }} de {{ site.portfolio.size }} projetos</span>
+</p>
+
+{% if site.portfolio_category %}
+  {% for category in site.portfolio_category %}
+    {% assign cat_posts = site.portfolio | where: "category", category[0] | sort: "order" %}
+    {% if cat_posts.size > 0 %}
+      <section data-portfolio-section="{{ category[0] }}">
+        <h2 id="{{ category[0] }}">
+          <span class="lang-en">{{ category[1].title }}</span>
+          <span class="lang-pt">{{ category[1].title_pt | default: category[1].title }}</span>
+        </h2>
+        <hr />
+        {% for post in cat_posts %}
+          {% include archive-single.html %}
+        {% endfor %}
+      </section>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% for post in site.portfolio %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
+
+<hr />
+
+<h2 id="research-lines"><span class="lang-en">Core Scientific Research Lines &amp; Partners</span><span class="lang-pt">Linhas Científicas e Parceiros Institucionais</span></h2><hr />
+
+<div class="lang-en" markdown="1">
+
+* **Federated Learning &amp; Edge Intelligence:** Decentralized learning architectures enabling edge nodes to collaborate without sharing raw telemetry data, balancing privacy, non-IID heterogeneity, and communication constraints in IoT and utility infrastructure.
+* **Prototype-Based Classifiers &amp; Interpretable AI:** Distance- and prototype-driven methods (SOM, GLVQ, GRLVQ, and ensembles) yielding transparent decision boundaries and lightweight footprint on embedded devices.
+* **Smart Grids, Smart Metering &amp; Critical Infrastructure Monitoring:** Condition monitoring of electric motors, transient hydraulic and acoustic anomaly localization in water networks, and automated validation of AMI meters and distribution reclosers.
+
+### Institutional Partners &amp; Laboratories
+
+* **[Instituto Gridtech de Pesquisa e Desenvolvimento / Hexing Brasil](https://hexing.com.br/)** — Accredited Science and Technology Institution (ICT).
+* **[GTEL (Wireless Telecommunications Research Group) / SPIRAL Lab](http://www.gtel.ufc.br)** — Federal University of Ceará (UFC), Fortaleza, Brazil.
+* **[Network and Systems Engineering Division](https://people.kth.se/~carlofi/)** — KTH Royal Institute of Technology, Stockholm, Sweden.
+* **[Department of Teleinformatics Engineering (DETI / PPGETI)](https://www.deti.ufc.br)** — Federal University of Ceará (UFC).
+
+</div>
+
+<div class="lang-pt" markdown="1">
+
+* **Aprendizado Federado e Inteligência na Borda (*Edge AI*):** Arquiteturas descentralizadas que permitem treinamento colaborativo sem expor dados brutos em redes IoT e *utilities*, tratando heterogeneidade não-IID e restrições de banda.
+* **Classificadores Baseados em Protótipos e IA Interpretável:** Modelos baseados em distância e protótipos (SOM, GLVQ, GRLVQ e comitês) com fronteiras de decisão transparentes e baixo custo computacional embarcado.
+* **Smart Grids, Medição Inteligente e Monitoramento de Infraestrutura Crítica:** Diagnóstico de falhas em máquinas elétricas, localização de vazamentos hidráulicos, e ensaio automatizado de medidores AMI e religadores.
+
+### Parceiros e Laboratórios
+
+* **[Instituto Gridtech de Pesquisa e Desenvolvimento / Hexing Brasil](https://hexing.com.br/)** — Instituição Científica e Tecnológica (ICT) credenciada.
+* **[GTEL / Laboratório SPIRAL](http://www.gtel.ufc.br)** — Universidade Federal do Ceará (UFC), Fortaleza, Brasil.
+* **[Network and Systems Engineering Division](https://people.kth.se/~carlofi/)** — KTH Royal Institute of Technology, Estocolmo, Suécia.
+* **[Departamento de Engenharia de Teleinformática (DETI / PPGETI)](https://www.deti.ufc.br)** — Universidade Federal do Ceará (UFC).
+
+</div>

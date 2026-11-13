@@ -1,0 +1,52 @@
+---
+layout: archive
+title: "Publications"
+title_pt: "Publicações"
+permalink: /publications/
+author_profile: true
+redirect_from:
+  - /publications.html
+---
+
+<div class="wordwrap">
+  <span class="lang-en">You can also explore my full citation metrics and academic profiles on</span>
+  <span class="lang-pt">Você também pode acompanhar métricas, citações e registros atualizados no</span>
+  {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>{% endif %}
+  {% if site.author.researchgate %} &middot; <a href="{{ site.author.researchgate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a>{% endif %}
+  {% if site.author.lattes %} &middot; <a href="{{ site.author.lattes }}" target="_blank" rel="noopener noreferrer"><span class="lang-en">Lattes Curriculum (CNPq)</span><span class="lang-pt">Currículo Lattes (CNPq)</span></a>{% endif %}.
+</div>
+
+{% if site.publication_category %}
+  <div class="wordwrap pub-toc"><strong><span class="lang-en">Jump to:</span><span class="lang-pt">Ir para:</span></strong>
+    {% assign shown = 0 %}
+    {% for category in site.publication_category %}
+      {% assign cat_posts = site.publications | where: "category", category[0] %}
+      {% if cat_posts.size > 0 %}
+        {% if shown > 0 %} &middot; {% endif %}<a href="#{{ category[0] }}"><span class="lang-en">{{ category[1].title }}</span><span class="lang-pt">{{ category[1].title_pt | default: category[1].title }}</span></a>{% assign shown = shown | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% include base_path %}
+
+{% if site.publication_category %}
+  {% for category in site.publication_category %}
+    {% assign title_shown = false %}
+    {% for post in site.publications reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2 id="{{ category[0] }}"><span class="lang-en">{{ category[1].title }}</span><span class="lang-pt">{{ category[1].title_pt | default: category[1].title }}</span></h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
+
